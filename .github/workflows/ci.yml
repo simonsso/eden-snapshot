@@ -42,15 +42,13 @@ jobs:
               "method": "chain_getFinalizedHead",    
               "params": [],
               "id": 1
-            } | jq '{"result"}[]'  >> release_doc/ReleaseLog
+            }' | jq '{"result"}[]'  >> release_doc/ReleaseLog
           cat release_doc/ReleaseLog
       - name: Run try-runtime
         uses: NodleCode/action-try-runtime/create@beta
         with:
           url: ${{ env.try-runtime-uri}}${{ secrets.DWELLIR_API_KEY}}
           snap: eden-snapshot-full
-          options: "-p noodle-uniques"
-
       - name: Archive snap
         uses: actions/upload-artifact@v4.3.1
         with:
