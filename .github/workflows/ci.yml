@@ -45,7 +45,7 @@ jobs:
             }' | jq '{"result"}[]'  >> release_doc/ReleaseLog
           cat release_doc/ReleaseLog
       - name: Run try-runtime
-        uses: NodleCode/action-try-runtime/create@beta
+        uses: NodleCode/action-try-runtime/create@v0.6.1
         with:
           url: ${{ env.try-runtime-uri}}${{ secrets.DWELLIR_API_KEY}}
           snap: eden-snapshot-full
