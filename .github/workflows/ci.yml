@@ -8,7 +8,7 @@ on:
     - cron: '10 10 */3 * *'
 
 env:
-  try-runtime-uri: wss://api-eden.dwellir.com:443/
+  try-runtime-uri: wss://api-nodle.dwellir.com:443/
 
 jobs:
   try-runtime:
