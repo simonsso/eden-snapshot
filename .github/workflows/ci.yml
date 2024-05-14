@@ -18,7 +18,7 @@ jobs:
       - name: Check Version
         run: |
           echo Sha of APIkey -n
-          echo ${{ secrets.DWELLIR_API_KEY}} | md5dsum
+          echo ${{ secrets.DWELLIR_API_KEY}} | md5sum
           echo -n "eden_rev=" >> $GITHUB_OUTPUT
           curl -s --request POST   --url https://nodle-parachain.api.onfinality.io/public   --header 'Content-Type: application/json'   --data '{
              "jsonrpc": "2.0", 
