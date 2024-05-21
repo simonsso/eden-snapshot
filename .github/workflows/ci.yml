@@ -50,7 +50,7 @@ jobs:
           url: ${{ env.try-runtime-uri}}${{ secrets.DWELLIR_API_KEY}}
           snap: eden-snapshot-full
       - name: Archive snap
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v4.3.3
         with:
             name: eden-snapshot-full
             path: eden-snapshot-full
