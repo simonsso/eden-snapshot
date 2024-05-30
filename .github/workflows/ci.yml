@@ -8,12 +8,12 @@ on:
     - cron: '10 10 */3 * *'
 
 env:
-  try-runtime-uri: wss://api-nodle.dwellir.com:443/
+  try-runtime-uri: wss://nodle-parachain.api.onfinality.io:443/public-ws
 
 jobs:
   try-runtime:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 180
     steps:
       - name: Check Version
         run: |
@@ -47,7 +47,7 @@ jobs:
       - name: Run try-runtime
         uses: NodleCode/action-try-runtime/create@v0.6.1
         with:
-          url: ${{ env.try-runtime-uri}}${{ secrets.DWELLIR_API_KEY}}
+          url: ${{ env.try-runtime-uri}}
           snap: eden-snapshot-full
       - name: Archive snap
         uses: actions/upload-artifact@v4.3.3
